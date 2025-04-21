@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account {
 
 	private String accountNum;
@@ -12,7 +16,7 @@ public class Account {
 	 * @param deliveryFrequency
 	 * @param customerName
 	 */
-	public Account(String accountNum, DeliveryFrequency deliveryFrequency, String customerName) {
+	public Account(String accountNum, String deliveryFrequency, String customerName) {
 		// TODO - implement Account.Account
 		throw new UnsupportedOperationException();
 	}
@@ -21,7 +25,7 @@ public class Account {
 		return this.accountNum;
 	}
 
-	public DeliveryFrequency getDeliveryFrequency() {
+	public String getDeliveryFrequency() {
 		// TODO - implement Account.getDeliveryFrequency
 		throw new UnsupportedOperationException();
 	}
@@ -30,7 +34,7 @@ public class Account {
 		return this.customerName;
 	}
 
-	public DeliveryPreference getDeliveryPreference() {
+	public String getDeliveryPreference() {
 		// TODO - implement Account.getDeliveryPreference
 		throw new UnsupportedOperationException();
 	}
@@ -39,7 +43,7 @@ public class Account {
 	 * 
 	 * @param pref
 	 */
-	public boolean setDeliveryPreference(DeliveryPreference pref) {
+	public boolean setDeliveryPreference(String pref) {
 		// TODO - implement Account.setDeliveryPreference
 		throw new UnsupportedOperationException();
 	}
