@@ -1,8 +1,11 @@
+
+import java.time.LocalDateTime;
+
 public class Log {
 
 	private User associatedUser;
 	private String message;
-	private DateTime dateTime;
+	private LocalDateTime dateTime;
 	private int severity;
 
 	/**
@@ -19,7 +22,7 @@ public class Log {
 		return this.message;
 	}
 
-	public DateTime getDateTime() {
+	public LocalDateTime getDateTime() {
 		return this.dateTime;
 	}
 
