@@ -59,6 +59,7 @@ public class AccountTest {
         for (Statement stmt : statements) {
             if (!stmts.contains(stmt)) {
                 System.err.println("Could not find a statement.");
+                return;
             }
         }
 
@@ -67,8 +68,33 @@ public class AccountTest {
     }
 
     public static void DeliveryPreferenceTest() {
-        // TODO: implement
+        Account testAccount = new Account(null, null, null);
 
+        // delivery preferences
+        String electronic = "Electronic-Only";
+        String physical = "Physical and Electronic";
+        
+        // Check to see if we can update the delivery preference
+        if (!testAccount.setDeliveryPreference(electronic)) {
+            System.err.println("Could not update preference to " + electronic);
+            return;
+        }
+
+        // Check to see if the delivery preference has been updated properly
+        if (!testAccount.getDeliveryPreference().equals(electronic)) {
+            System.err.println("Preference updated improperly");
+            return;
+        }
+
+        // Check to see if the delivery preference can be updated again
+        if (!testAccount.setDeliveryPreference(physical)
+            || !testAccount.getDeliveryPreference().equals(physical)) {
+                System.err.println("Preference could not be changed to " + physical);
+                return;
+            }
+        
+        // All tests passed
+        System.out.println("All DeliveryPreferenceTest subtests have passed");
     }
 }
 
