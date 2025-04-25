@@ -1,10 +1,11 @@
-
+import java.util.List;
 
 public class AccountTest {
     public static void main(String[] args) {
         try {
             CheckArgumentsTest();
             CheckStatementsTest();
+            DeliveryPreferenceTest();
         } catch (Exception e) {
             System.err.println("Error: " + e);
         }
@@ -40,7 +41,29 @@ public class AccountTest {
     }
 
     public static void CheckStatementsTest() {
-        // TODO: implement
+        Account testAccount = new Account(null, null, null);
+        MockStatement[] statements = {new MockStatement(), new MockStatement()};
+
+        // Check to see if we can add at least two statements
+        if (!testAccount.addStatement(statements[0])) {
+            System.err.println("statements[0] could not be added.");
+            return;
+        }
+        if (!testAccount.addStatement(statements[1])) {
+            System.err.println("statements[1] could not be added.");
+            return;
+        }
+
+        // Check to see if we can get the same statements back
+        List<Statement> stmts = testAccount.getStatements();
+        for (Statement stmt : statements) {
+            if (!stmts.contains(stmt)) {
+                System.err.println("Could not find a statement.");
+            }
+        }
+
+        // All tests passed
+        System.out.println("All CheckStatementsTest subtests have passed");
     }
 
     public static void DeliveryPreferenceTest() {
