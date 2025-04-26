@@ -17,8 +17,11 @@ public class Account {
 	 * @param customerName
 	 */
 	public Account(String accountNum, String deliveryFrequency, String customerName) {
-		// TODO - implement Account.Account
-		throw new UnsupportedOperationException();
+		this.accountNum = accountNum;
+		this.deliveryFrequency = deliveryFrequency;
+		this.customerName = customerName;
+		deliveryPreference = ""; // TODO: Figure out client preference on default state, and determine if states should be an enum
+		statements = new ArrayList<>();
 	}
 
 	public String getAccountNum() {
@@ -26,8 +29,7 @@ public class Account {
 	}
 
 	public String getDeliveryFrequency() {
-		// TODO - implement Account.getDeliveryFrequency
-		throw new UnsupportedOperationException();
+		return this.deliveryFrequency;
 	}
 
 	public String getCustomerName() {
@@ -35,8 +37,7 @@ public class Account {
 	}
 
 	public String getDeliveryPreference() {
-		// TODO - implement Account.getDeliveryPreference
-		throw new UnsupportedOperationException();
+		return this.deliveryPreference;
 	}
 
 	/**
@@ -44,8 +45,8 @@ public class Account {
 	 * @param pref
 	 */
 	public boolean setDeliveryPreference(String pref) {
-		// TODO - implement Account.setDeliveryPreference
-		throw new UnsupportedOperationException();
+		deliveryPreference = pref;
+		return true;
 	}
 
 	/**
@@ -53,13 +54,12 @@ public class Account {
 	 * @param statement
 	 */
 	public boolean addStatement(Statement statement) {
-		// TODO - implement Account.addStatement
-		throw new UnsupportedOperationException();
+		statements.add(statement);
+		return true;
 	}
 
 	public List<Statement> getStatements() {
-		// TODO - implement Account.getStatements
-		throw new UnsupportedOperationException();
+		return List.copyOf(statements);
 	}
 
 }
