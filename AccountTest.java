@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class AccountTest {
@@ -101,5 +102,26 @@ public class AccountTest {
 class MockStatement extends Statement {
     public MockStatement() {
         super(0, null, null);
+    }
+
+    // Just going to say that this is an awful Mock because its meaning in 'life'
+    // is to simply exist for its pointer
+
+    // In a REAL Mock, it'd probably have some mock-implementations of various methods,
+    // so I'll go ahead and slip a few here to show that this is what I think a mock is
+
+    public int getId() {
+        return 0;
+    }
+
+    public String getData() {
+        // supposed to be a File type, but I don't know how to make a mock of that
+        // so I'm returning a string instead
+        return "Pretend this is a Statement from May-05-2023 with relevant statement data";
+    }
+
+    public LocalDateTime getDate() {
+        LocalDateTime timestamp = LocalDateTime.of(2023, 5, 5, 0, 0, 0);
+        return timestamp;
     }
 }
